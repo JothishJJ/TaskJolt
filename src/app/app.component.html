@@ -1,10 +1,14 @@
 <nav class="fixed top-0 left-0 right-0">
   <ul
-    class="flex justify-around items-center bg-neutral-50 py-1 backdrop-blur-xl bg-opacity-80"
+    class="flex justify-around items-center bg-neutral-50 py-1 backdrop-blur-xl bg-opacity-10"
   >
     <li><a class="text-3xl" routerLink="/">TaskJolt</a></li>
-    <li><a routerLink="/">Home</a></li>
-    <li><a routerLink="/app">App</a></li>
+    <div class="flex gap-12">
+      <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="/signup" routerLinkActive="active">Sign up</a></li>
+      <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+      <li><a routerLink="/app" routerLinkActive="active">App</a></li>
+    </div>
     <li><a routerLink="/profile">Profile</a></li>
   </ul>
 </nav>
