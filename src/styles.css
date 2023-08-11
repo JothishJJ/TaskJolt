@@ -1,8 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600&family=Open+Sans&display=swap");
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   color: #ffffff;
+  @apply font-sans text-sm lg:text-base;
 }
 
 body {
@@ -16,5 +21,21 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Josefin Sans", sans-serif;
+  @apply font-display text-6xl;
+}
+
+h1 {
+  @apply font-bold text-5xl;
+}
+
+h2 {
+  @apply font-semibold text-4xl;
+}
+
+h3 {
+  @apply font-medium text-3xl;
+}
+
+h4 {
+  @apply font-normal text-2xl;
 }
