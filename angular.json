@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/task-jolt",
+            "outputPath": "dist/TaskJolt/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -96,6 +96,60 @@
             ],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/TaskJolt/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "TaskJolt:build:development",
+              "serverTarget": "TaskJolt:server:development"
+            },
+            "production": {
+              "browserTarget": "TaskJolt:build:production",
+              "serverTarget": "TaskJolt:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "TaskJolt:build:production",
+              "serverTarget": "TaskJolt:server:production"
+            },
+            "development": {
+              "browserTarget": "TaskJolt:build:development",
+              "serverTarget": "TaskJolt:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
