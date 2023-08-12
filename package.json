@@ -4,13 +4,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build-dev": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run TaskJolt:serve-ssr",
     "serve:ssr": "node dist/TaskJolt/server/main.js",
     "build:ssr": "ng build && ng run TaskJolt:server",
-    "prerender": "ng run TaskJolt:prerender"
+    "prerender": "ng run TaskJolt:prerender",
+    "vercel-build": "npm run build:ssr"
   },
   "private": true,
   "dependencies": {
