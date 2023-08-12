@@ -5,8 +5,14 @@ import { MatRippleModule } from '@angular/material/core';
 import { PrimaryBtnDirective } from './primary-btn/primary-btn.directive';
 import { InputDirective } from './input/input.directive';
 import { LabelDirective } from './label/label.directive';
+import { PrimaryOutlinedBtnDirective } from './primary-oulined-btn/primary-outlined-btn.directive';
 
-const declarations = [PrimaryBtnDirective, InputDirective, LabelDirective];
+const declarations = [
+  PrimaryBtnDirective,
+  InputDirective,
+  LabelDirective,
+  PrimaryOutlinedBtnDirective,
+];
 const imports = [CommonModule, MatIconModule, MatRippleModule];
 
 @NgModule({

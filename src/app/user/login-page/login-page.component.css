@@ -1,4 +1,4 @@
-button {
+button.link {
   background: linear-gradient(
       to right,
       rgba(100, 200, 200, 0),
@@ -16,7 +16,7 @@ button {
   transition: background-size 200ms;
 }
 
-button:hover,
-button:focus {
+button.link:hover,
+button.link:focus {
   background-size: 0 0.1em, 100% 0.1em;
 }
