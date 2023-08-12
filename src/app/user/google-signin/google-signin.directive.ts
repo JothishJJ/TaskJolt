@@ -18,11 +18,16 @@ export class GoogleSigninDirective {
     signInWithPopup(this.auth, provider).then((result) => {
       const user = result.user;
       const userDoc = doc(this.db, `users/${user.uid}`);
-      setDoc(userDoc, <User>{
-        uid: user.uid,
-        email: user.email,
-        displayName: user.displayName,
-      });
+      // Creates a doc for the current if not present
+      setDoc(
+        userDoc,
+        <User>{
+          uid: user.uid,
+          email: user.email,
+          displayName: user.displayName,
+        },
+        { merge: true }
+      );
     });
   }
 }

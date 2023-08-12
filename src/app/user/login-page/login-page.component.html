@@ -1,21 +1,25 @@
 <div class="mx-4 md:mx-40 lg:mx-50">
-  <div class="flex">
-    <form class="p-8 w-full lg:w-[50%]">
+  <!-- Logged in -->
+  <div class="flex" *ngIf="!(authState$ | async); else loggedIn">
+    <div class="p-8 w-full lg:w-[50%]">
       <h2 *ngIf="isSignup">Hello there 👋</h2>
       <h2 *ngIf="isLogin">Wellcome back 🤗</h2>
       <div class="py-6 space-y-4">
-        <div class="relative">
-          <input type="text" placeholder="Email" appInput />
-          <label for="email" appLabel>Email</label>
-        </div>
-        <div class="relative">
-          <input type="text" placeholder="Password" appInput />
-          <label for="password" appLabel>Password</label>
-        </div>
-        <div class="relative" *ngIf="isSignup">
-          <input type="text" placeholder="Password" appInput />
-          <label for="password" appLabel>Confirm Password</label>
-        </div>
+        <form class="space-y-4">
+          <div class="relative">
+            <input type="text" placeholder="Email" appInput />
+            <label for="email" appLabel>Email</label>
+          </div>
+          <div class="relative">
+            <input type="text" placeholder="Password" appInput />
+            <label for="password" appLabel>Password</label>
+          </div>
+          <div class="relative" *ngIf="isSignup">
+            <input type="text" placeholder="Password" appInput />
+            <label for="password" appLabel>Confirm Password</label>
+          </div>
+        </form>
+
         <button appPrimaryBtn *ngIf="isSignup">Sign up</button>
         <button appPrimaryBtn *ngIf="isLogin">Log in</button>
         <hr class="py-4" />
@@ -41,10 +45,25 @@
         Don't have an account?
         <button class="link" (click)="setState('signup')">Signup</button>
       </p>
-    </form>
+    </div>
 
     <div class="w-[50%] m-auto hidden lg:block">
       <h2>Sign up to manage your tasks with ease</h2>
     </div>
   </div>
+
+  <ng-template #loggedIn>
+    <div
+      *ngIf="authState$ | async as user"
+      class="flex flex-col items-center pt-8 gap-4"
+    >
+      <h2>Hi {{ user.displayName }} 👋</h2>
+      <p class="text-sm pb-6">You are already <strong>logged in!</strong></p>
+      <a routerLink="/app" appPrimaryBtn class="w-auto">Go to App</a>
+      <h3 class="py-4">OR</h3>
+      <button appPrimaryOutlinedBtn class="w-auto" (click)="auth.signOut()">
+        Logout
+      </button>
+    </div>
+  </ng-template>
 </div>
