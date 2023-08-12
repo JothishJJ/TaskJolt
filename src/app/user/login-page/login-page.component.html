@@ -1,8 +1,8 @@
 <div class="lg:mx-72">
   <form>
-    <!-- Signup page -->
-    <div *ngIf="state === 'signup'" class="flex flex-col items-center p-8">
-      <h2>Hello there 👋</h2>
+    <div class="flex flex-col items-center p-8">
+      <h2 *ngIf="isSignup">Hello there 👋</h2>
+      <h2 *ngIf="isLogin">Wellcome back 🤗</h2>
       <div class="py-6 space-y-4">
         <div class="relative">
           <input type="text" placeholder="Email" appInput />
@@ -12,32 +12,18 @@
           <input type="text" placeholder="Password" appInput />
           <label for="password" appLabel>Password</label>
         </div>
-        <div class="relative">
+        <div class="relative" *ngIf="isSignup">
           <input type="text" placeholder="Password" appInput />
           <label for="password" appLabel>Confirm Password</label>
         </div>
       </div>
-      <p class="text-sm pt-4">
+      <p *ngIf="isSignup" class="text-sm pt-4">
         Already a user?
         <button (click)="setState('login')">Login</button>
       </p>
-    </div>
-
-    <!-- Login page -->
-    <div *ngIf="state === 'login'" class="flex flex-col items-center p-8">
-      <h2>Wellcome back 🤗</h2>
-      <div class="py-6 space-y-4">
-        <div class="relative">
-          <input type="text" placeholder="Email" appInput />
-          <label for="email" appLabel>Email</label>
-        </div>
-        <div class="relative">
-          <input type="text" placeholder="Password" appInput />
-          <label for="password" appLabel>Password</label>
-        </div>
-      </div>
-      <p class="text-sm">
-        New user? <button (click)="setState('signup')">Signup</button>
+      <p *ngIf="isLogin" class="text-sm pt-4">
+        Don't have an account?
+        <button (click)="setState('signup')">Signup</button>
       </p>
     </div>
   </form>

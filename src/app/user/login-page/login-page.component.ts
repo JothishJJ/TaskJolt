@@ -11,4 +11,12 @@ export class LoginPageComponent {
   setState(state: 'signup' | 'login') {
     this.state = state;
   }
+
+  get isLogin() {
+    return this.state === 'login';
+  }
+
+  get isSignup() {
+    return this.state === 'signup';
+  }
 }
