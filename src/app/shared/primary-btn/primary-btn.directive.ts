@@ -2,7 +2,6 @@ import { Directive, HostBinding } from '@angular/core';
 
 @Directive({
   selector: '[appPrimaryBtn]',
-  hostDirectives: [],
 })
 export class PrimaryBtnDirective {
   @HostBinding('class')
