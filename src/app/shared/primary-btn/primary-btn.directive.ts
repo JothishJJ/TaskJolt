@@ -5,9 +5,9 @@ import { Directive, HostBinding } from '@angular/core';
 })
 export class PrimaryBtnDirective {
   @HostBinding('class')
-  elementClass = ` bg-emerald-600 p-2 rounded-lg border-transparent text-semibold
-  font-display text-xl hover:border-emerald-600 border-2 hover:bg-transparent
-  shadow-md hover:shadow-emerald-500 transition`;
+  elementClass = ` bg-blue-600 p-2 rounded-lg border-transparent text-semibold
+  font-display text-xl hover:border-blue-600 border-2 hover:bg-transparent
+  shadow-md hover:shadow-blue-500 transition`;
 
   constructor() {}
 }
