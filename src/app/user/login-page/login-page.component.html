@@ -1,6 +1,6 @@
-<div class="lg:mx-72">
+<div class="mx-4 md:mx-40 lg:mx-50">
   <div class="flex">
-    <form class="p-8 w-[50%]">
+    <form class="p-8 w-full lg:w-[50%]">
       <h2 *ngIf="isSignup">Hello there 👋</h2>
       <h2 *ngIf="isLogin">Wellcome back 🤗</h2>
       <div class="py-6 space-y-4">
@@ -19,8 +19,17 @@
         <button appPrimaryBtn *ngIf="isSignup">Sign up</button>
         <button appPrimaryBtn *ngIf="isLogin">Log in</button>
         <hr class="py-4" />
-        <button appPrimaryOutlinedBtn>
-          Login with Google <mat-icon>google</mat-icon>
+        <button
+          appPrimaryOutlinedBtn
+          class="flex items-center justify-center gap-2"
+        >
+          Login with Google
+          <img
+            ngSrc="assets/google-logo.svg"
+            alt="google"
+            height="35"
+            width="35"
+          />
         </button>
       </div>
       <p *ngIf="isSignup" class="text-sm pt-4">
@@ -33,7 +42,7 @@
       </p>
     </form>
 
-    <div class="w-[50%] m-auto">
+    <div class="w-[50%] m-auto hidden lg:block">
       <h2>Sign up to manage your tasks with ease</h2>
     </div>
   </div>
