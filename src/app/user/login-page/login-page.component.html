@@ -1,1 +1,16 @@
-<p>login-page works!</p>
+<div class="text-center pt-12">
+  <!-- Signup page -->
+  <div *ngIf="state === 'signup'">
+    <h2>Hello there 👋</h2>
+    <p>
+      Already a user?
+      <button (click)="setState('login')">Login</button>
+    </p>
+  </div>
+
+  <!-- Login page -->
+  <div *ngIf="state === 'login'">
+    <h2>Wellcome back 🤗</h2>
+    <p>New user? <button (click)="setState('signup')">Signup</button></p>
+  </div>
+</div>

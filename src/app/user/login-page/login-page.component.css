@@ -1,0 +1,22 @@
+button {
+  background: linear-gradient(
+      to right,
+      rgba(100, 200, 200, 0),
+      rgba(100, 200, 200, 0)
+    ),
+    linear-gradient(
+      to right,
+      rgba(5, 150, 105, 1),
+      rgba(16, 185, 129, 1),
+      rgba(37, 99, 235, 1)
+    );
+  background-size: 100% 0.1em, 0 0.1em;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 200ms;
+}
+
+button:hover,
+button:focus {
+  background-size: 0 0.1em, 100% 0.1em;
+}
