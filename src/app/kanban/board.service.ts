@@ -14,8 +14,10 @@ import {
   orderBy,
   writeBatch,
   collectionData,
+  setDoc,
+  arrayUnion,
 } from '@angular/fire/firestore';
-import { switchMap } from 'rxjs';
+import { merge, switchMap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -48,7 +50,7 @@ export class BoardService {
   }
 
   /**
-   * Updates the task on board
+   * Updates the tasks on board
    */
   updateTask(boardId: string | undefined, tasks: Task[] | undefined) {
     const docRef = doc(this.firestore, 'boards', boardId ? boardId : '');
@@ -61,6 +63,17 @@ export class BoardService {
   removeTask(boardId: string, task: Task) {
     const docRef = doc(this.firestore, 'boards', boardId);
     updateDoc(docRef, { tasks: arrayRemove(task) });
+  }
+
+  /**
+   * Adds a specific task to board
+   * Merge is true just in case
+   */
+  addTask(boardId: string | undefined, task: Task) {
+    if (boardId) {
+      const docRef = doc(this.firestore, 'boards', boardId);
+      updateDoc(docRef, { tasks: arrayUnion(task) });
+    }
   }
 
   /**

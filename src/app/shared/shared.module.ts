@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatRippleModule } from '@angular/material/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
 
 // Custom Directives
 import { PrimaryBtnDirective } from './primary-btn/primary-btn.directive';
@@ -23,6 +24,7 @@ const imports = [
   MatIconModule,
   MatRippleModule,
   MatSnackBarModule,
+  MatDialogModule,
 ];
 
 /**
