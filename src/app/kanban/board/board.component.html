@@ -1,0 +1,20 @@
+<div class="border-2 rounded-lg p-2 w-80 bg-neutral-800">
+  <div class="flex justify-between items-center pb-4">
+    <!-- Slot for the handle -->
+    <h3>{{ board.title }}</h3>
+    <ng-content></ng-content>
+  </div>
+
+  <div
+    class="space-y-2 h-[72vh] overflow-y-auto"
+    cdkDropList
+    cdkDropListOrientation="vertical"
+    (cdkDropListDropped)="taskDrop($event)"
+  >
+    <div cdkDrag *ngFor="let task of board.tasks; let i = index">
+      <div [ngClass]="task.label" class="p-2 rounded-md">
+        {{ task.description }}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+.cdk-drag-animating {
+  transition: transform 300ms ease;
+}
+
+.cdk-drop-list-dragging .cdk-drag {
+  transition: transform 300ms ease;
+}
+
+.cdk-drag-placeholder {
+  opacity: 0.5;
+}
