@@ -6,7 +6,7 @@
   </div>
 
   <div
-    class="space-y-2 h-[72vh] overflow-y-auto relative"
+    class="space-y-2 h-[72vh] overflow-y-auto relative board"
     cdkDropList
     cdkDropListOrientation="vertical"
     (cdkDropListDropped)="taskDrop($event)"
@@ -14,9 +14,12 @@
     <div cdkDrag *ngFor="let task of board.tasks; let i = index">
       <div
         [ngClass]="task.label"
-        class="p-2 rounded-sm min-h-[4rem] line-clamp-2"
+        class="p-2 rounded-sm min-h-[4rem] flex justify-between items-center"
       >
-        {{ task.description }}
+        <p class="line-clamp-2 text-black">{{ task.description }}</p>
+        <mat-icon class="min-w-[2rem] cursor-grab" cdkDragHandle
+          >drag_handle</mat-icon
+        >
       </div>
     </div>
     <button
