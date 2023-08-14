@@ -1,8 +1,8 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { BoardService } from '../board.service';
-import { Task } from '../board.model';
+import { BoardService } from '../../board.service';
+import { Task } from '../../board.model';
 
 @Component({
   selector: 'app-dialog',
@@ -26,6 +26,7 @@ import { Task } from '../board.model';
             <mat-option value="blue">Blue</mat-option>
             <mat-option value="green">Green</mat-option>
             <mat-option value="yellow">Yellow</mat-option>
+            <mat-option value="purple">Purple</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
@@ -41,9 +42,9 @@ import { Task } from '../board.model';
   `,
   styles: [],
 })
-export class DialogComponent {
+export class TaskDialogComponent {
   constructor(
-    private dialogRef: MatDialogRef<DialogComponent>,
+    private dialogRef: MatDialogRef<TaskDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { taskId: string },
     private boardsService: BoardService
   ) {}

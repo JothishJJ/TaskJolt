@@ -3,7 +3,7 @@ import { Board } from '../board.model';
 import { BoardService } from '../board.service';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '../dialog/dialog.component';
+import { TaskDialogComponent } from '../dialogs/task-dialog/task-dialog.component';
 
 @Component({
   selector: 'app-board',
@@ -25,6 +25,6 @@ export class BoardComponent {
   }
 
   openDialog(taskId: string | undefined) {
-    this.dialog.open(DialogComponent, { data: { taskId: taskId } });
+    this.dialog.open(TaskDialogComponent, { data: { taskId: taskId } });
   }
 }

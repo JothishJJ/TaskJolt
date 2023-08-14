@@ -1,7 +1,7 @@
 <div class="border-2 rounded-lg p-2 w-80 bg-neutral-800">
   <div class="flex justify-between items-center pb-4">
     <!-- Slot for the handle -->
-    <h3>{{ board.title }}</h3>
+    <h3 class="line-clamp-1">{{ board.title }}</h3>
     <ng-content></ng-content>
   </div>
 
@@ -23,7 +23,7 @@
       </div>
     </div>
     <button
-      class="sticky bg-blue-500 rounded-3xl bottom-4 left-4 flex items-center bg-opacity-40"
+      class="sticky bg-blue-500 rounded-3xl bottom-4 left-4 flex items-center bg-opacity-80"
       (click)="openDialog(board.id)"
     >
       <mat-icon>add</mat-icon>

@@ -6,13 +6,19 @@ import { BoardListComponent } from './board-list/board-list.component';
 import { SharedModule } from '../shared/shared.module';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { BoardComponent } from './board/board.component';
-import { DialogComponent } from './dialog/dialog.component';
+import { TaskDialogComponent } from './dialogs/task-dialog/task-dialog.component';
 import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { BoardDialogComponent } from './dialogs/board-dialog/board-dialog.component';
 
 @NgModule({
-  declarations: [BoardListComponent, BoardComponent, DialogComponent],
+  declarations: [
+    BoardListComponent,
+    BoardComponent,
+    TaskDialogComponent,
+    BoardDialogComponent,
+  ],
   imports: [
     CommonModule,
     KanbanRoutingModule,

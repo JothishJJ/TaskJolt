@@ -15,4 +15,16 @@
   >
     <mat-icon cdkDragHandle class="cursor-grab">drag_indicator</mat-icon>
   </app-board>
+  <div>
+    <div class="border-2 rounded-lg p-2 w-80 bg-neutral-800">
+      <h3 class="pb-4">Create a new board</h3>
+      <button
+        appPrimaryBtn
+        class="flex justify-center items-center"
+        (click)="openBoardDialog()"
+      >
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+  </div>
 </div>

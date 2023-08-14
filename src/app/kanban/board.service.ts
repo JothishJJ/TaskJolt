@@ -14,10 +14,9 @@ import {
   orderBy,
   writeBatch,
   collectionData,
-  setDoc,
   arrayUnion,
 } from '@angular/fire/firestore';
-import { merge, switchMap } from 'rxjs';
+import { switchMap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -37,14 +36,25 @@ export class BoardService {
     return await addDoc(collectionRef, {
       ...data,
       uid: user?.uid,
-      tasks: [{ description: 'Hello', label: 'purple' }],
-    });
+      tasks: [
+        {
+          description: `Wellcome to ${data.title ? data.title : ''}`,
+          label: 'purple',
+        },
+      ],
+    })
+      // Adds the created Board id to the document
+      .then((result) => {
+        updateDoc(doc(this.firestore, 'boards', result.id), {
+          id: result.id,
+        });
+      });
   }
 
   /**
-   * Delete board
+   * Deletes a board
    */
-  deleteTask(taskId: string) {
+  deleteBoard(taskId: string) {
     const docRef = doc(this.firestore, 'boards', taskId);
     return deleteDoc(docRef);
   }
