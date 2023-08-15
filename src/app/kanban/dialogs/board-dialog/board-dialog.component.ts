@@ -13,10 +13,13 @@ import { Board } from '../../board.model';
         <label for="Board" appLabel>Title</label>
       </div>
       <div class="flex gap-4 pt-8">
-        <button appPrimaryOutlinedBtn [mat-dialog-close]>Cancel</button>
+        <button appPrimaryOutlinedBtn [mat-dialog-close] matRipple>
+          Cancel
+        </button>
         <button
           class="flex items-center justify-center"
           appPrimaryBtn
+          matRipple
           (click)="addBoard()"
         >
           <mat-icon>add</mat-icon>

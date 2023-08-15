@@ -29,3 +29,21 @@
 .cdk-drag-placeholder {
   opacity: 0.5;
 }
+
+/* .board {
+  scrollbar-color: #999 #333;
+} */
+
+.board::-webkit-scrollbar {
+  @apply rounded-lg w-2 h-2;
+}
+
+.board::-webkit-scrollbar-thumb {
+  background: rgba(240, 240, 240, 30%);
+
+  @apply rounded-lg;
+}
+
+/* .board::-webkit-scrollbar-track {
+  background: #333;
+} */
