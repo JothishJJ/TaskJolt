@@ -15,8 +15,9 @@ import {
   writeBatch,
   collectionData,
   arrayUnion,
+  docData,
 } from '@angular/fire/firestore';
-import { switchMap } from 'rxjs';
+import { Observable, switchMap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -83,6 +84,19 @@ export class BoardService {
     if (boardId) {
       const docRef = doc(this.firestore, 'boards', boardId);
       updateDoc(docRef, { tasks: arrayUnion(task) });
+    }
+  }
+
+  /**
+   * Gets the specific clicked task
+   * @param {string} boardId Board id of the board to get
+   */
+  getBoard(boardId?: string) {
+    if (boardId) {
+      const docRef = doc(this.firestore, 'boards', boardId);
+      return docData<Board>(docRef);
+    } else {
+      return null;
     }
   }
 

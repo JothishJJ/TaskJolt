@@ -15,6 +15,7 @@
       <div
         [ngClass]="task.label"
         class="p-2 rounded-sm min-h-[4rem] flex justify-between items-center"
+        (click)="openDetails(i, board.id)"
       >
         <p class="line-clamp-2 text-black">{{ task.description }}</p>
         <mat-icon class="min-w-[2rem] cursor-grab" cdkDragHandle

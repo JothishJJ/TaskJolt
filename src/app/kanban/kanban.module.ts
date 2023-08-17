@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BoardDialogComponent } from './dialogs/board-dialog/board-dialog.component';
+import { TaskDetailsDialogComponent } from './dialogs/task-details-dialog/task-details-dialog.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { BoardDialogComponent } from './dialogs/board-dialog/board-dialog.compon
     BoardComponent,
     TaskDialogComponent,
     BoardDialogComponent,
+    TaskDetailsDialogComponent,
   ],
   imports: [
     CommonModule,

@@ -11,12 +11,14 @@ import { PrimaryBtnDirective } from './primary-btn/primary-btn.directive';
 import { InputDirective } from './input/input.directive';
 import { LabelDirective } from './label/label.directive';
 import { PrimaryOutlinedBtnDirective } from './primary-oulined-btn/primary-outlined-btn.directive';
+import { DangerBtnDirective } from './danger-btn/danger-btn.directive';
 
 const declarations = [
   PrimaryBtnDirective,
   InputDirective,
   LabelDirective,
   PrimaryOutlinedBtnDirective,
+  DangerBtnDirective,
 ];
 
 const imports = [
@@ -26,12 +28,6 @@ const imports = [
   MatSnackBarModule,
   MatDialogModule,
 ];
-
-/**
- * The Components/Directives or anything else to use Globally is defined here
- *
- * Add your Global angular imports here
- */
 
 @NgModule({
   declarations: [...declarations],
