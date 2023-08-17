@@ -34,6 +34,11 @@ export class BoardComponent {
       data: { boardId, index },
       autoFocus: false,
       minWidth: 20 * 16,
+      maxWidth: 24 * 16,
     });
+  }
+
+  deleteBoard(boardId?: string) {
+    if (boardId) this.boardService.deleteBoard(boardId);
   }
 }

@@ -23,11 +23,19 @@
         >
       </div>
     </div>
-    <button
-      class="sticky bg-blue-500 rounded-3xl bottom-4 left-4 flex items-center bg-opacity-80"
-      (click)="openDialog(board.id)"
-    >
-      <mat-icon>add</mat-icon>
-    </button>
+    <div class="flex sticky bottom-4 justify-between px-2">
+      <button
+        class="bg-blue-500 rounded-3xl p-1 flex items-center bg-opacity-80"
+        (click)="openDialog(board.id)"
+      >
+        <mat-icon>add</mat-icon>
+      </button>
+      <button
+        class="bg-red-500 rounded-3xl p-1 flex items-center bg-opacity-70"
+        (click)="deleteBoard(board.id)"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
   </div>
 </div>
