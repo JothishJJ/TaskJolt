@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Board } from '../board.model';
+import { Board, Task } from '../board.model';
 import { BoardService } from '../board.service';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { MatDialog } from '@angular/material/dialog';
@@ -40,5 +40,19 @@ export class BoardComponent {
 
   deleteBoard(boardId?: string) {
     if (boardId) this.boardService.deleteBoard(boardId);
+  }
+
+  deleteTask(e: Event, i: number, board: Board) {
+    e.stopPropagation();
+    const input = e.target as Element;
+    const button = input.nextElementSibling;
+    button?.classList.add('line-through');
+    // Only deltes after 1 SelectionModel
+    setTimeout(() => {
+      if (board.tasks && board.id) {
+        const task = board.tasks[i];
+        this.boardService.removeTask(board.id, task);
+      }
+    }, 1000);
   }
 }

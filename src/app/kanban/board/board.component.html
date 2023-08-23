@@ -17,7 +17,14 @@
         class="p-2 rounded-sm min-h-[4rem] flex justify-between items-center"
         (click)="openDetails(i, board.id)"
       >
-        <p class="line-clamp-2 text-black">{{ task.description }}</p>
+        <div class="flex items-center gap-2">
+          <input
+            type="checkbox"
+            class="w-4 h-4 text-blue-600"
+            (click)="deleteTask($event, i, board)"
+          />
+          <p class="line-clamp-2 text-black">{{ task.description }}</p>
+        </div>
         <mat-icon class="min-w-[2rem] cursor-grab" cdkDragHandle
           >drag_handle</mat-icon
         >
