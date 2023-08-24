@@ -6,7 +6,7 @@ import { Directive, HostBinding } from '@angular/core';
 export class DangerBtnDirective {
   @HostBinding('class')
   elementClass = ` bg-red-600 p-2 rounded-lg border-transparent text-semibold
-  font-display text-xl hover:border-red-600 border-2 hover:bg-transparent
+  font-display text-xl hover:border-red-600 border-2 hover:bg-opacity-20
   shadow-md hover:shadow-red-500 transition w-full`;
 
   constructor() {}

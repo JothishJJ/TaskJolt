@@ -6,13 +6,11 @@
 @tailwind utilities;
 
 * {
-  color: #ffffff;
   @apply font-sans text-sm lg:text-base;
 }
 
 body {
-  height: 100%;
-  background-color: #0f172a;
+  @apply h-full bg-neutral-100;
 }
 
 h1,

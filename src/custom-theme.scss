@@ -19,7 +19,7 @@ $TaskJolt-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$TaskJolt-theme: mat.define-dark-theme(
+$TaskJolt-theme: mat.define-light-theme(
   (
     color: (
       primary: $TaskJolt-primary,

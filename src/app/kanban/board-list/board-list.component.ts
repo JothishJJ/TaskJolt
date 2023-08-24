@@ -35,6 +35,7 @@ export class BoardListComponent implements OnInit, OnDestroy {
   openBoardDialog() {
     this.dialog.open(BoardDialogComponent, {
       data: { numberOfBoards: this.boards.length },
+      minWidth: 20 * 16,
     });
   }
 }

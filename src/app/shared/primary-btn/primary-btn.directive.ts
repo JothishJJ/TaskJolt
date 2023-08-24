@@ -6,7 +6,7 @@ import { Directive, HostBinding } from '@angular/core';
 export class PrimaryBtnDirective {
   @HostBinding('class')
   elementClass = ` bg-blue-600 p-2 rounded-lg border-transparent text-semibold
-  font-display text-xl hover:border-blue-600 border-2 hover:bg-transparent
+  font-display text-xl hover:border-blue-600 border-2 hover:bg-opacity-10 uppercase
   shadow-md hover:shadow-blue-500 transition w-full`;
 
   constructor() {}

@@ -20,7 +20,6 @@ import { Task } from '../../board.model';
       </div>
       <div class="pt-8">
         <mat-form-field>
-          <mat-label>Select an option</mat-label>
           <mat-select [(value)]="taskLabel">
             <mat-option value="red">Red</mat-option>
             <mat-option value="blue">Blue</mat-option>
@@ -35,7 +34,12 @@ import { Task } from '../../board.model';
       <button matRipple appPrimaryOutlinedBtn (click)="onNoClick()">
         Cancel
       </button>
-      <button matRipple appPrimaryBtn (click)="addTaskToBoard()">
+      <button
+        matRipple
+        appPrimaryBtn
+        class="flex justify-center items-center"
+        (click)="addTaskToBoard()"
+      >
         <mat-icon>add</mat-icon>
       </button>
     </div>

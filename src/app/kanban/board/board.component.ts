@@ -26,7 +26,10 @@ export class BoardComponent {
   }
 
   openDialog(taskId: string | undefined) {
-    this.dialog.open(TaskDialogComponent, { data: { taskId: taskId } });
+    this.dialog.open(TaskDialogComponent, {
+      data: { taskId: taskId },
+      minWidth: 20 * 16,
+    });
   }
 
   openDetails(index: number, boardId?: string) {

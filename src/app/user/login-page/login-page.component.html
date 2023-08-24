@@ -55,7 +55,7 @@
   <ng-template #loggedIn>
     <div
       *ngIf="authState$ | async as user"
-      class="flex flex-col items-center pt-8 gap-4"
+      class="flex flex-col items-center pt-8 text-center px-4 md:px-40 xl:px-80 gap-4"
     >
       <h2>Hi {{ user.displayName }} 👋</h2>
       <p class="text-sm pb-6">You are already <strong>logged in!</strong></p>
