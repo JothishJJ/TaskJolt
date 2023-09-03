@@ -14,15 +14,17 @@
     <div cdkDrag *ngFor="let task of board.tasks; let i = index">
       <div
         [ngClass]="task.label"
-        class="p-2 rounded-sm min-h-[4rem] flex justify-between items-center"
+        class="p-2 rounded-md min-h-[4rem] flex justify-between items-center"
         (click)="openDetails(i, board.id)"
       >
         <div class="flex items-center gap-2">
-          <input
-            type="checkbox"
-            class="w-4 h-4 text-blue-600"
-            (click)="deleteTask($event, i, board)"
-          />
+          <div class="rounded-3xl">
+            <input
+              type="checkbox"
+              class="h-5 w-5 text-blue-400"
+              (click)="deleteTask($event, i, board)"
+            />
+          </div>
           <p class="line-clamp-2 text-black">{{ task.description }}</p>
         </div>
         <mat-icon class="min-w-[2rem] cursor-grab" cdkDragHandle

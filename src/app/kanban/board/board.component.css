@@ -1,21 +1,21 @@
 .blue {
-  background: #71deff;
+  @apply bg-blue-500;
 }
 .green {
-  background: #36e9b6;
+  @apply bg-green-500;
 }
 .yellow {
-  background: #ffcf44;
+  @apply bg-yellow-500;
 }
 .purple {
-  background: #b15cff;
+  @apply bg-purple-600;
 }
 .red {
-  background: #e74a4a;
+  @apply bg-red-600;
 }
 
 .gray {
-  background: gray;
+  @apply bg-gray-600;
 }
 
 .cdk-drag-animating {
