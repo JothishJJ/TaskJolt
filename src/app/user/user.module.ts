@@ -7,9 +7,10 @@ import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { NgOptimizedImage } from '@angular/common';
 import { GoogleSigninDirective } from './google-signin/google-signin.directive';
+import { SignOutDirective } from './sign-out.directive';
 
 @NgModule({
-  declarations: [LoginPageComponent, GoogleSigninDirective],
+  declarations: [LoginPageComponent, GoogleSigninDirective, SignOutDirective],
   imports: [
     CommonModule,
     UserRoutingModule,

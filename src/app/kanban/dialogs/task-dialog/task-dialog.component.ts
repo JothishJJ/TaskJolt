@@ -13,13 +13,14 @@ import { Task } from '../../board.model';
         <input
           type="text"
           placeholder="Task"
+          style="background: #f9f9f9 !important;"
           appInput
           [(ngModel)]="taskDescription"
         />
         <label for="text" appLabel>Task</label>
       </div>
       <div class="pt-8">
-        <mat-form-field>
+        <mat-form-field class="w-full">
           <mat-select [(value)]="taskLabel">
             <mat-option value="red">Red</mat-option>
             <mat-option value="blue">Blue</mat-option>
@@ -51,7 +52,7 @@ export class TaskDialogComponent {
     private dialogRef: MatDialogRef<TaskDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { taskId: string },
     private boardsService: BoardService
-  ) {}
+  ) { }
 
   taskDescription?: string;
   taskLabel = 'green';

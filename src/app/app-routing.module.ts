@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
 import { authGuard } from './user/guards/auth.guard';
+import { ProfilesComponent } from './profiles/profiles.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
@@ -15,6 +16,10 @@ const routes: Routes = [
       import('./kanban/kanban.module').then((m) => m.KanbanModule),
     canActivate: [authGuard],
   },
+  {
+    path: "profile",
+    component: ProfilesComponent
+  }
 ];
 
 @NgModule({
@@ -25,4 +30,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

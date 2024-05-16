@@ -14,7 +14,7 @@ import { TaskDetailsDialogComponent } from '../dialogs/task-details-dialog/task-
 export class BoardComponent {
   @Input()
   board!: Board;
-  constructor(private boardService: BoardService, private dialog: MatDialog) {}
+  constructor(private boardService: BoardService, private dialog: MatDialog) { }
 
   taskDrop(event: CdkDragDrop<string[]>) {
     moveItemInArray(
@@ -28,7 +28,7 @@ export class BoardComponent {
   openDialog(taskId: string | undefined) {
     this.dialog.open(TaskDialogComponent, {
       data: { taskId: taskId },
-      minWidth: 20 * 16,
+      minWidth: 30 * 16, // Calculating css rem values
     });
   }
 
@@ -36,8 +36,8 @@ export class BoardComponent {
     this.dialog.open(TaskDetailsDialogComponent, {
       data: { boardId, index },
       autoFocus: false,
-      minWidth: 20 * 16,
-      maxWidth: 24 * 16,
+      minWidth: 30 * 16, // Calculating css rem values
+      maxWidth: 30 * 16,
     });
   }
 
